@@ -1,0 +1,37 @@
+int led1Pin = 11; // Pin number for LED 1
+int led2Pin = 10; // Pin number for LED 2
+int led3Pin = 9; // Pin number for LED 3
+int buttonPin = 4; // Pin number for the pushbutton
+
+boolean ledsOn = false; // Flag to indicate if LEDs are ON or OFF
+
+void setup() {
+  pinMode(led1Pin, OUTPUT);
+  pinMode(led2Pin, OUTPUT);
+  pinMode(led3Pin, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP); // Enable internal pull-up resistor for the button pin
+}
+
+void loop() {
+byte buttonState = digitalRead(buttonPin);
+
+if (buttonState == LOW) {  
+	digitalWrite(led1Pin, HIGH);
+
+	delay(1000);
+
+	digitalWrite(led1Pin, LOW);
+	digitalWrite(led2Pin, HIGH);
+
+	delay(1000);
+
+	digitalWrite(led2Pin, LOW);
+	digitalWrite(led3Pin, HIGH);
+
+	delay(1000);
+
+	digitalWrite(led3Pin, LOW);
+  
+	}
+
+}
